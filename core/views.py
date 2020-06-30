@@ -9,11 +9,6 @@ def index(request):
     return render(request, 'index.html')
 
 
-def book(request):
-    print(request.POST)
-    pass
-
-
 def appointment(request):
     if request.is_ajax():
         print(request.POST)
@@ -45,4 +40,19 @@ def services(request):
 
 
 def contact(request):
+    if request.is_ajax():
+        print(request.POST)
+        response = {
+            'msg': 'your message has been sent successfully .. We will reach out to you soon .'
+        }
+        return JsonResponse(response)
+
     return render(request, 'contact.html')
+
+def quick_contact(request):
+    if request.is_ajax():
+        print(request.POST)
+        response = {
+            'msg': 'your phone number has been sent successfully .. We will reach out to you soon .'
+        }
+        return JsonResponse(response)

@@ -757,44 +757,6 @@
             style="height: 5px; z-index: 20; background: rgb(221, 187, 0);"></div>
     </div>
 </div>
-<!--pst form wrapper start -->
-<div class="single_contact_form_wrapper pst_toppadder50 pst_bottompadder50">
-    <div class="container">
-        <form action="{% url 'book' %}" method="POST">
-        <div class="row">
-                {% csrf_token %}
-                <div class="pst_form_control">
-                    <div class="pst_single_forms"><input type="text" placeholder="Name" name="name" /><i class="fa fa-user"></i>
-                    </div>
-                </div>
-                <div class="pst_form_control pst_form_control_2">
-                    <div class="pst_single_forms"><input type="email" placeholder="Email" name='email' /><i
-                            class="fa fa-envelope"></i></div>
-                </div>
-                <div class="pst_form_control">
-                    <div class="pst_single_forms"><input type="text" placeholder="zip code"  /><i class="fa fa-star"></i>
-                    </div>
-                </div>
-                <div class="pst_form_control">
-                    <div class="pst_single_forms pst_form_control_2"><input type="text" placeholder="location" name='location' /><i
-                            class="fa fa-map-marker"></i></div>
-                </div>
-                <div class="pst_btn_form">
-                    <ul>
-                        <li>
-                            <button type="submit" class="tem-btn">
-                                <div class="btn-front">submit</div>
-                                <div class="btn-back">submit</div>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!--pst form wrapper end-->
-<!-- sp services wrapper Start -->
 <div class="work_services_wrapper pst_toppadder100 pst_bottompadder70">
     <div class="container">
         <div class="row">

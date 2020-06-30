@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict";
 
     var revapi24;
@@ -8,25 +8,25 @@
     // Preloader -section
     //-------------------------------------------------------
     // Preloader 
-    jQuery(window).on('load', function() {
+    jQuery(window).on('load', function () {
         jQuery("#status").fadeOut();
         jQuery("#preloader").delay(350).fadeOut("slow");
     });
     // on ready function
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
 
 
 
         //--------------------up scroll js----------------------------- 
         // ===== Scroll to Top ==== 
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() >= 100) {
                 $('#return-to-top').fadeIn(200);
             } else {
                 $('#return-to-top').fadeOut(200);
             }
         });
-        $('#return-to-top').on("click", function() {
+        $('#return-to-top').on("click", function () {
             $('body,html').animate({
                 scrollTop: 0
             }, 500);
@@ -37,12 +37,12 @@
         // ===== Scroll to Top end ==== 
 
         //show hide login form js
-        $('#search_button').on("click", function(e) {
+        $('#search_button').on("click", function (e) {
             $('#search_open').slideToggle();
             e.stopPropagation();
         });
 
-        $(document).on("click", function(e) {
+        $(document).on("click", function (e) {
             if (!(e.target.closest('#search_open'))) {
                 $("#search_open").slideUp();
             }
@@ -51,7 +51,7 @@
 
 
         // Menu js for Position fixed
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             var window_top = $(window).scrollTop() + 1;
             if (window_top > 30) {
                 $('.menu_wrapper').addClass('menu_fixed animated fadeIn');
@@ -62,7 +62,7 @@
 
 
         // Wow js
-        $(window).on("load", function() {
+        $(window).on("load", function () {
             var wow = new WOW({
                 boxClass: 'wow',
                 animateClass: 'animated',
@@ -77,7 +77,7 @@
         /*--- Responsive Menu Start ----*/
 
 
-        $("#toggle").on("click", function() {
+        $("#toggle").on("click", function () {
             var w = $('#sidebar').width();
             var pos = $('#sidebar').offset().left;
 
@@ -93,7 +93,7 @@
 
         });
 
-        $("#toggle_close").on("click", function() {
+        $("#toggle_close").on("click", function () {
             var w = $('#sidebar').width();
             var pos = $('#sidebar').offset().left;
 
@@ -109,11 +109,11 @@
 
         });
 
-        (function($) {
+        (function ($) {
 
 
             $('#cssmenu li.active').addClass('open').children('ul').show();
-            $('#cssmenu li.has-sub>a').on('click', function() {
+            $('#cssmenu li.has-sub>a').on('click', function () {
                 $(this).removeAttr('href');
                 var element = $(this).parent('li');
                 if (element.hasClass('open')) {
@@ -140,7 +140,7 @@
 
         var tpj = jQuery;
         var revapi24;
-        tpj(function() {
+        tpj(function () {
             if (tpj("#rev_slider_24_1").revolution == undefined) {
                 revslider_showDoubleJqueryError("#rev_slider_24_1");
             } else {
@@ -280,9 +280,9 @@
 
         // counter-section
         //-------------------------------------------------------
-        $('.counter_section').on('inview', function(event, visible, visiblePartX, visiblePartY) {
+        $('.counter_section').on('inview', function (event, visible, visiblePartX, visiblePartY) {
             if (visible) {
-                $(this).find('.timer').each(function() {
+                $(this).find('.timer').each(function () {
                     var $this = $(this);
                     $({
                         Counter: 0
@@ -291,7 +291,7 @@
                     }, {
                         duration: 2000,
                         easing: 'swing',
-                        step: function() {
+                        step: function () {
                             $this.text(Math.ceil(this.Counter));
                         }
                     });
@@ -406,7 +406,7 @@
             stagger: 30
         });
 
-        $('.filter-demo').on('click', '.button', function() {
+        $('.filter-demo').on('click', '.button', function () {
             var filterValue = $(this).attr('data-filter');
             $grid.isotope({
                 filter: filterValue
@@ -415,9 +415,9 @@
 
         // change is-checked class on buttons
 
-        $('.filter').each(function(i, buttonGroup) {
+        $('.filter').each(function (i, buttonGroup) {
             var $buttonGroup = $(buttonGroup);
-            $buttonGroup.on('click', '.button', function() {
+            $buttonGroup.on('click', '.button', function () {
                 $buttonGroup.find('.is-checked').removeClass('is-checked');
                 $(this).addClass('is-checked');
             });
@@ -426,7 +426,7 @@
 
 
         /*********color change script start*******/
-        $('.colorchange').on('click', function() {
+        $('.colorchange').on('click', function () {
 
             var color_name = $(this).attr('id');
             var new_style = 'css/color/' + color_name + '.css';
@@ -435,7 +435,7 @@
 
         });
         //rotate setting gear 
-        $(function() {
+        $(function () {
 
             var $rota = $('#style-switcher .bottom a.settings img'),
                 degree = 0,
@@ -446,7 +446,7 @@
                     transform: 'rotate(' + degree + 'deg)'
                 });
                 // timeout increase degrees:
-                timer = setTimeout(function() {
+                timer = setTimeout(function () {
                     ++degree;
                     rotate(); // loop it
                 }, 0);
@@ -457,7 +457,7 @@
         });
 
 
-        $("#style-switcher .bottom a.settings").on('click', function(e) {
+        $("#style-switcher .bottom a.settings").on('click', function (e) {
             e.preventDefault();
             var div = $("#style-switcher");
             if (div.css("left") === "-215px") {
@@ -477,7 +477,7 @@
 
         //--------Counter(Chart)---------//
 
-        (function() {
+        (function () {
 
             $('.chart_two_1st').easyPieChart({
                 //your configuration goes here
@@ -491,7 +491,7 @@
                 scaleLength: 0,
                 lineCap: 'circle',
                 animate: 5000,
-                onStep: function(from, to, percent) {
+                onStep: function (from, to, percent) {
                     this.el.children[0].innerHTML = Math.round(percent);
                 }
             });
@@ -500,7 +500,7 @@
 
 
 
-        (function() {
+        (function () {
 
             $('.chart_two_2nd').easyPieChart({
                 //your configuration goes here
@@ -514,7 +514,7 @@
                 scaleLength: 0,
                 lineCap: 'circle',
                 animate: 5000,
-                onStep: function(from, to, percent) {
+                onStep: function (from, to, percent) {
                     this.el.children[0].innerHTML = Math.round(percent);
                 }
             });
@@ -522,7 +522,7 @@
         }());
 
 
-        (function() {
+        (function () {
 
             $('.chart_two_3rd').easyPieChart({
                 //your configuration goes here
@@ -536,7 +536,7 @@
                 scaleLength: 0,
                 lineCap: 'circle',
                 animate: 5000,
-                onStep: function(from, to, percent) {
+                onStep: function (from, to, percent) {
                     this.el.children[0].innerHTML = Math.round(percent);
                 }
             });
@@ -559,7 +559,7 @@
             var check = 0;
             $('#er_msg').remove();
             var target = (typeof formId == 'object') ? $(formId) : $('#' + formId);
-            target.find('input , textarea , select').each(function() {
+            target.find('input , textarea , select').each(function () {
                 if ($(this).hasClass('require')) {
                     if ($(this).val().trim() == '') {
                         check = 1;
@@ -588,32 +588,32 @@
             });
             return check;
         }
-        $(".submitForm").on("click", function() {
-            var _this = $(this);
-            var targetForm = _this.closest('form');
-            var errroTarget = targetForm.find('.response');
-            var check = checkRequire(targetForm, errroTarget);
-            if (check == 0) {
-                var formDetail = new FormData(targetForm[0]);
-                formDetail.append('form_type', _this.attr('form-type'));
-                $.ajax({
-                    method: 'post',
-                    
-                    data: formDetail,
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                }).done(function(resp) {
-                    if (resp == 1) {
-                        targetForm.find('input').val('');
-                        targetForm.find('textarea').val('');
-                        errroTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
-                    } else {
-                        errroTarget.html('<p style="color:red;">Something went wrong please try again latter.</p>');
-                    }
-                });
-            }
-        });
+        // $(".submitForm").on("click", function() {
+        //     var _this = $(this);
+        //     var targetForm = _this.closest('form');
+        //     var errroTarget = targetForm.find('.response');
+        //     var check = checkRequire(targetForm, errroTarget);
+        //     if (check == 0) {
+        //         var formDetail = new FormData(targetForm[0]);
+        //         formDetail.append('form_type', _this.attr('form-type'));
+        //         $.ajax({
+        //             method: 'post',
+        //             url : "{% url 'contact' %}",
+        //             data: formDetail,
+        //             cache: false,
+        //             contentType: false,
+        //             processData: false
+        //         }).done(function(resp) {
+        //             if (resp == 1) {
+        //                 targetForm.find('input').val('');
+        //                 targetForm.find('textarea').val('');
+        //                 errroTarget.html('<p style="color:green;">Mail has been sent successfully.</p>');
+        //             } else {
+        //                 errroTarget.html('<p style="color:red;">Something went wrong please try again latter.</p>');
+        //             }
+        //         });
+        //     }
+        // });
 
 
 
@@ -633,12 +633,13 @@
             return cookieValue;
         }
         const csrftoken = getCookie('csrftoken');
+
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
             return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
         }
         $.ajaxSetup({
-            beforeSend: function(xhr, settings) {
+            beforeSend: function (xhr, settings) {
                 if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 }
@@ -650,7 +651,7 @@
             var errroTarget = targetForm.find('.response');
             e.preventDefault()
             var check = checkRequire(targetForm, errroTarget);
-            if (check == 0 ) {
+            if (check == 0) {
                 $.ajax({
 
                     type: "POST",
@@ -664,29 +665,100 @@
                         type: $('#type').val(),
                         space: $('#space').val(),
                         dataType: "json"
-    
+
                     },
-    
-                    
+
+
                     success: function (data) {
-                        $('#popup-form').css('display' , 'none')
+                        $('#popup-form').css('display', 'none')
                         // $('#popup-form').addClass('hidden')
-                        $('.alert').css('display','block');
+                        $('.alert').css('display', 'block');
                         $('.alert-text').html(data.msg);
-                        console.log('success', data.msg)
+
                         // $('.alert').css('display','block');
                         targetForm.find('input').val('');
                         targetForm.find('textarea').val('');
+                        const scrollY = document.body.style.top;
+                        document.body.style.position = '';
+                        document.body.style.top = '';
+                        window.scrollTo(0, parseInt(scrollY || '0') * -1);
                     },
                     failure: function (data) {
                         console.log(data)
                     }
-    
+
                 })
             }
-            
+
+        });
+
+        $('#contact-form').on('submit', function (e) {
+            var _this = $(this);
+            var targetForm = _this.closest('form');
+            var errroTarget = targetForm.find('.response');
+            var check = checkRequire(targetForm, errroTarget);
+            e.preventDefault()
+            if (check == 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/contact",
+                    data: {
+                        name: $('#contact_name').val(),
+                        email: $('#contact_email').val(),
+                        phone: $('#contact_phone').val(),
+                        message: $('#message').val(),
+                        dataType: "json"
+
+                    },
+
+
+                    success: function (data) {
+
+                        $('.alert').css('display', 'block');
+                        $('.alert-text').html(data.msg);
+                        targetForm.find('input').val('');
+                        targetForm.find('textarea').val('');
+
+                    },
+                    failure: function (data) {
+                        console.log(data)
+                    }
+
+                })
+            }
+
         })
-    
+
+        $('#quick-contact').on('submit', function (e) {
+            var _this = $(this);
+            var targetForm = _this.closest('form');
+            var errroTarget = targetForm.find('.response');
+            var check = checkRequire(targetForm, errroTarget);
+            e.preventDefault()
+            if (check == 0) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/quick-contact",
+                    data: {
+                        phone: $('#quick-phone').val(),
+                        dataType: "json",
+                    },
+                    success: function (data) {
+                        console.log(data)
+                        $('.alert').css('display', 'block');
+                        $('.alert-text').html(data.msg);
+
+                        // $('.alert').css('display','block');
+                        targetForm.find('input').val('');
+                    }
+                })
+            }
+
+
+
+        })
+
 
     });
 

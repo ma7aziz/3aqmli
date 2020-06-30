@@ -95,25 +95,25 @@
                             <h4>leave your message</h4>
                             <p class="pst_toppadder10 pst_bottompadder30">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aem aliqua. Ut enim ad minim veniam.</p>
 
-                            <form>
+                            <form  id="contact-form" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="inquiry_section-pos">
                                             <div class="form-group">
                                                 <label class="sr-only">Name</label>
-                                                <input type="text" name="full_name" placeholder="Full Name" class="require form-control" />
+                                                <input id="contact_name" type="text" name="full_name" placeholder="Full Name" class="require form-control" />
                                             </div>
                                         </div>
                                         <div class="inquiry_section-e">
                                             <div class="form-group">
                                                 <label class="sr-only">Email</label>
-                                                <input type="email" name="email" placeholder="Email" class="require form-control" data-valid="email" data-error="Email should be valid." />
+                                                <input id="contact_email" type="email" name="email" placeholder="Email" class="require form-control" data-valid="email" data-error="Email should be valid." />
                                             </div>
                                         </div>
                                         <div class="inquiry_section-p">
                                             <div class="form-group">
                                                 <label class="sr-only">Phone</label>
-                                                <input type="text" name="contact_no" placeholder="Phone" class="require form-control" />
+                                                <input type="text" id="contact_phone" name="contact_no" placeholder="Phone" class="require form-control" />
                                             </div>
                                         </div>
                                     </div>
@@ -122,7 +122,7 @@
                                         <div class="inquiry_section-m">
                                             <div class="form-group">
                                                 <label class="sr-only">Message</label>
-                                                <textarea rows="7" name="message" placeholder="Message" class="require form-control"></textarea>
+                                                <textarea rows="7" id="message" name="message" placeholder="Message" class="require form-control"></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -130,7 +130,7 @@
                                     <div class="col-lg-12 col-md-12 col-12 col-sm-12">
                                         <div class="response"></div>
                                         <div class="cntct_2_btn_wrapper">
-                                            <button type="button" class="btn cntct_btn submitForm">Send</button>
+                                            <button type="submit" class="btn cntct_btn submitForm">Send</button>
                                         </div>
                                     </div>
                                 </div>
@@ -161,4 +161,9 @@
             </div>
         </div>
         <!-- message section end -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <script>
+           
+        </script>
 {% endblock %}

@@ -358,8 +358,11 @@
                 </div>
                 <div class="col-lg-5 col-md-12 col-12 col-sm-12">
                     <div class="wrapper_email_button pst_toppadder10">
-                        <input type="email" placeholder="your email here" />
-                        <a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                        <form action="" id="quick-contact">
+                            <input type="text" placeholder="your Phone Number Here"  name="phone" id = "quick-phone"/>
+                            <button type="submit" id="quick-contact-btn" style="border: none; padding:0; "><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -416,7 +419,7 @@
                         <div class="pst_btn_form footer_btn_wrapper">
                             <ul>
                                 <li>
-                                    <a href="#" class="tem-btn">
+                                    <a href="{% url 'contact' %}" class="tem-btn">
                                         <div class="btn-front">contact us</div>
                                         <div class="btn-back">contact us</div>
                                     </a>
@@ -535,8 +538,8 @@
             <div class="row">
                 <div class="col-lg-10 col-md-10 col-10 col-sm-10">
                     <div class="section3_copyright">
-                        <p>Copyright 2020 - 21 <a href="{% url 'index' %}"> Deconta</a>. all right reserved - design by
-                            <a href="index.html">webstrot</a></p>
+                        <p>Copyright 2020 - 21 all right reserved 
+                            <a href="http://braineg.com" target="__blank">Brain Analytica</a></p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-2 col-sm-2">
@@ -577,9 +580,7 @@
     <script src="{% static 'js/plugin/rs_slider/revolution.addon.slicey.min.js' %}"></script>
     <script src="{% static 'js/custom.js' %}"></script>
 
-    <!-- Request form submition ajax  -->
-    
-   
+
     <script>
         let button = document.getElementById('appointment-btn')
         let form = document.getElementById('popup-form')
@@ -615,3 +616,4 @@
     </script>
 
 </body>
+</html>

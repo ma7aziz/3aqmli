@@ -45,16 +45,16 @@
         display: block;
         position: fixed;
         width: 100%;
-        height:100%;
+        height: 100%;
         overflow-y: hidden;
         overflow-y: auto;
-       
+
         top: 0;
         background-color: rgba(0, 0, 0, 0.719);
         padding-left: 20px;
         z-index: 990000000000000;
     }
-    
+
     .form-showing form {
         width: 70%;
         margin: auto;
@@ -63,12 +63,13 @@
         text-align: center;
         border-radius: 10px;
     }
+
     @media screen and (max-width: 900px) {
         .form-showing form {
             width: 90%;
             padding: 20px;
 
-        } 
+        }
     }
 
     .form-showing label {
@@ -83,29 +84,34 @@
         color: #fff;
         font-size: 25px;
     }
+
     .alert {
         position: fixed;
         top: 80%;
         right: 5%;
         z-index: 99999999999999999999999999;
         display: none;
-        
+
     }
+
     .alert-text {
         font-size: 18px;
     }
+
     .appointmnt_wrapper {
         cursor: pointer;
     }
+
     @media screen and (max-width: 991px) {
-    .appointmnt_wrapper { 
-        position: fixed;
-        top: 80%;
-        right: 5%;
-        z-index: 999999999999999999999999999999999;
-    
+        .appointmnt_wrapper {
+            position: fixed;
+            top: 80%;
+            right: 5%;
+            z-index: 999999999999999999999999999999999;
+
         }
     }
+   
 </style>
 
 <body>
@@ -133,7 +139,8 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-lg-10 col-md-10 col-10 col-sm-10" style="  vertical-align: middle;
+                    <div class="col-lg-10 col-md-10 col-10 col-sm-10" style=" padding-top: 10px;
+
                     ">
                         <div id="toggle" class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -187,18 +194,19 @@
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <!-- Links -->
-                            <ul class="nav navbar-nav" id="nav_filter">
+                            <ul class="nav navbar-nav" id="nav_filter" >
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'index' %}">home</a>
+                                    <a class="nav-link" href="{% url 'index' %} "
+                                        style="color: #03204c;">home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{%url 'about' %}">about us</a>
+                                    <a class="nav-link" href="{%url 'about' %}" style=" color: #03204c;">about us</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'services' %}">services</a>
+                                    <a class="nav-link" href="{% url 'services' %}" style="color: #03204c;">services</a>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link " href="#">
+                                    <a class="nav-link " href="#" style="color: #03204c;">
                                         gallery
                                     </a>
 
@@ -206,7 +214,7 @@
 
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{% url 'contact' %}">contact us</a>
+                                    <a class="nav-link" href="{% url 'contact' %}" style="color: #03204c;">contact us</a>
                                 </li>
                             </ul>
                         </nav>
@@ -225,29 +233,15 @@
                                                 </button>
                                             </form>
                                         </li>
-                                        <li><a href="index.html">home</a></li>
-                                        <li class="active"><a href="about_us.html">about us</a></li>
-                                        <li><a href="services.html">services</a></li>
-                                        <li class="has-sub">
-                                            <a href="#">pages</a>
-                                            <ul>
-                                                <li><a href="services.html">services</a></li>
-                                                <li><a href="about_us.html">about us</a></li>
-                                                <li><a href="team.html">our team</a></li>
-                                                <li><a href="blog_single.html">blog single</a></li>
-                                                <li><a href="gallery_2.html"> gallery II</a></li>
-                                                <li><a href="gallery_3.html"> gallery III</a></li>
-                                                <li><a href="gallery_4.html"> gallery IV</a></li>
-                                            </ul>
+                                        <li><a href="{% url 'index' %}">home</a></li>
+                                        <li class="active"><a href="{% url 'about'%}">about us</a></li>
+                                        <li><a href="{% url 'services' %}">services</a></li>
+                                        <li>
+                                            <a href="#">Gallery</a>
+
                                         </li>
-                                        <li class="has-sub">
-                                            <a href="blog_single.html">blog</a>
-                                            <ul>
-                                                <li><a href="blog_single.html">blog single</a></li>
-                                                <li><a href="blog_category.html">blog category</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact_us.html">contact us</a></li>
+
+                                        <li><a href="{% url 'contact' %}">contact us</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -258,13 +252,13 @@
         </div>
     </div>
     <!-- </div> -->
-    
+
     {% block content %} {% endblock %}
     <div class="alert alert-success alert-dismissible" role="alert">
         <p class="alert-text"></p>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
-    </button>
+        </button>
     </div>
     <div id="popup-form" class="form popup-form hidden">
         <button class="close-btn" id="close-btn">&times;</button>
@@ -272,7 +266,8 @@
             {% csrf_token %}
             <div class="row">
                 <div class="col-12">
-                    <h1 style="color: #394C69; font-size: 25px; font-weight:800; padding: 15px 0">Request Our Services</h1>
+                    <h1 style="color: #394C69; font-size: 25px; font-weight:800; padding: 15px 0">Request Our Services
+                    </h1>
                     <p>Please Fill The following fields to request our services</p>
                 </div>
                 <div class="col-md-12">
@@ -300,19 +295,20 @@
                     <div class="inquiry_section-p">
                         <div class="form-group">
                             <label class="sr-only">Address</label>
-                            <input type="text" name="address" id="address" placeholder="Address" class="require form-control" />
+                            <input type="text" name="address" id="address" placeholder="Address"
+                                class="require form-control" />
                         </div>
                     </div>
                     <div class="inquiry_section-p">
-                        <div class="form-group " >
-                            <label class="sr-only" >Choose your prefered Date</label>
+                        <div class="form-group ">
+                            <label class="sr-only">Choose your prefered Date</label>
                             <input type="text" id="date" name="date" placeholder="Prefered Date"
-                                class="require form-control" onfocus="(this.type='date')"/>
+                                class="require form-control" onfocus="(this.type='date')" />
                         </div>
                     </div>
                     <div class="inquiry_section-p">
-                        <div class="form-group " >
-                            <label class="sr-only" >Space</label>
+                        <div class="form-group ">
+                            <label class="sr-only">Space</label>
                             <input type="number" id="space" name="space" placeholder="Unit space ( &#13217 )"
                                 class="require form-control" />
                         </div>
@@ -320,7 +316,7 @@
                     <div class="inquiry_section-p">
                         <div class="form-group">
                             <label class="sr-only">Unit Type</label>
-                            <select name="" id="type" class=" require form-control" >
+                            <select name="" id="type" class=" require form-control">
                                 <option value="" disabled selected>Select your unit type</option>
                                 <option value="house">House</option>
                                 <option value="office">Office</option>
@@ -344,7 +340,7 @@
             <!-- /.row -->
         </form>
     </div>
-    
+
     <!-- botm newslatter section start-->
     <div class="btm_newslater_section">
         <div class="container">
@@ -359,10 +355,11 @@
                 <div class="col-lg-5 col-md-12 col-12 col-sm-12">
                     <div class="wrapper_email_button pst_toppadder10">
                         <form action="" id="quick-contact">
-                            <input type="text" placeholder="your Phone Number Here"  name="phone" id = "quick-phone"/>
-                            <button type="submit" id="quick-contact-btn" style="border: none; padding:0; "><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            <input type="text" placeholder="your Phone Number Here" name="phone" id="quick-phone" />
+                            <button type="submit" id="quick-contact-btn" style="border: none; padding:0; "><i
+                                    class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </form>
-                        
+
                     </div>
                 </div>
             </div>
@@ -538,7 +535,7 @@
             <div class="row">
                 <div class="col-lg-10 col-md-10 col-10 col-sm-10">
                     <div class="section3_copyright">
-                        <p>Copyright 2020 - 21 all right reserved 
+                        <p>Copyright 2020 - 21 all right reserved
                             <a href="http://braineg.com" target="__blank">Brain Analytica</a></p>
                     </div>
                 </div>
@@ -616,4 +613,5 @@
     </script>
 
 </body>
+
 </html>

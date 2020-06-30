@@ -564,7 +564,7 @@
                     if ($(this).val().trim() == '') {
                         check = 1;
                         $(this).focus();
-                        targetResp.html('You missed out some fields.');
+                        targetResp.html('<p style="color: red" > You missed out some fields. </p>');
                         $(this).addClass('error');
                         return false;
                     } else {
@@ -616,7 +616,7 @@
         });
 
 
-        
+
         function getCookie(name) {
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
@@ -669,13 +669,12 @@
     
                     
                     success: function (data) {
-                        $('#popup-form').css('display', 'none')
+                        $('#popup-form').css('display' , 'none')
                         // $('#popup-form').addClass('hidden')
-                      
-                        console.log('success', data.msg)
                         $('.alert').css('display','block');
                         $('.alert-text').html(data.msg);
-                        
+                        console.log('success', data.msg)
+                        // $('.alert').css('display','block');
                         targetForm.find('input').val('');
                         targetForm.find('textarea').val('');
                     },
@@ -688,7 +687,6 @@
             
         })
     
-
 
     });
 

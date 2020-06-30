@@ -1,0 +1,605 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zxx">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+    <meta charset="utf-8" />
+    <title>Deconta - Sanitization & Cleaning Services </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Deconta - Sanitization & Cleaning Services" />
+    <meta name="keywords" content="pest control/Deconta - Sanitization & Cleaning Services/ controller/pestguard" />
+    <meta name="author" content="" />
+    <meta name="MobileOptimized" content="320" />
+    <!--start theme style -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.carousel.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/magnific-popup.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'venobox/css/venobox.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/owl.theme.default.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/flaticon.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/fonts.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'js/plugin/rs_slider/layers.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'js/plugin/rs_slider/navigation.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'js/plugin/rs_slider/settings.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}" />
+
+    <link rel="stylesheet" id="theme-color" type="text/css" href="#" />
+    <!-- favicon link-->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'images/title_icon.png' %}" />
+    <!-- <script src='../../google_analytics_auto.js'></script> -->
+</head>
+<style>
+    .hide-message {
+        display: none;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .form-showing {
+        display: block;
+        width: 100%;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.719);
+        padding: 20px;
+        z-index: 990000000000000;
+        padding: 20px;
+
+
+    }
+
+    .form-showing form {
+        width: 60%;
+        margin: auto;
+        background: #fff;
+        padding: 50px;
+        text-align: center;
+        border-radius: 10px;
+    }
+    @media screen and (max-width: 800px) {
+        .form-showing form {
+            width: 90%;
+        } 
+    }
+
+    .form-showing label {
+        color: #394C69;
+    }
+
+    .close-btn {
+        box-sizing: border-box;
+        display: block;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+    }
+    .alert {
+        position: fixed;
+        top: 80%;
+        right: 5%;
+        z-index: 99999999999999999999999999;
+        display: none;
+        
+    }
+    .alert-text {
+        font-size: 18px;
+    }
+    .appointmnt_wrapper {
+        cursor: pointer;
+    }
+    @media screen and (max-width: 991px) {
+    .appointmnt_wrapper { 
+        position: fixed;
+        top: 80%;
+        right: 5%;
+        z-index: 999999999999999999999999999999999;
+    
+        }
+    }
+</style>
+
+<body>
+    <!-- preloader Start -->
+    <div id="preloader">
+        <div id="status">
+            <img src="{% static 'images/pest_control.gif' %}" id="preloader_image" alt="loader" />
+        </div>
+    </div>
+    <!-- <div class="slider_area"> -->
+
+
+    <div class="menu_wrapper header-area hidden-menu-bar stick">
+        <div class="container-fluid">
+            <div id="search_open" class="gc_search_box">
+                <input type="text" placeholder="Search here" />
+                <button><i class="flaticon-magnifier"></i></button>
+            </div>
+            <div class="menu_wrapper_mn">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-2 col-sm-2">
+                        <div class="pst_logo">
+                            <a href="{% url 'index' %}">
+                                <img src="{% static 'images/3aqmli.png' %}" alt="Logo" height="75px" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-10 col-md-10 col-10 col-sm-10" style="  vertical-align: middle;
+                    ">
+                        <div id="toggle" class="d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 31.177 31.177"
+                                style="enable-background: new 0 0 31.177 31.177;" xml:space="preserve" width="25px"
+                                height="25px">
+                                <g>
+                                    <g>
+                                        <path class="menubar"
+                                            d="M30.23,1.775H0.946c-0.489,0-0.887-0.398-0.887-0.888S0.457,0,0.946,0H30.23    c0.49,0,0.888,0.398,0.888,0.888S30.72,1.775,30.23,1.775z"
+                                            fill="#000" />
+                                    </g>
+                                    <g>
+                                        <path class="menubar"
+                                            d="M30.23,9.126H12.069c-0.49,0-0.888-0.398-0.888-0.888c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,8.729,30.72,9.126,30.23,9.126z"
+                                            fill="#000" />
+                                    </g>
+                                    <g>
+                                        <path class="menubar"
+                                            d="M30.23,16.477H0.946c-0.489,0-0.887-0.398-0.887-0.888c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,16.079,30.72,16.477,30.23,16.477z"
+                                            fill="#000" />
+                                    </g>
+                                    <g>
+                                        <path class="menubar"
+                                            d="M30.23,23.826H12.069c-0.49,0-0.888-0.396-0.888-0.887c0-0.49,0.398-0.888,0.888-0.888H30.23    c0.49,0,0.888,0.397,0.888,0.888C31.118,23.43,30.72,23.826,30.23,23.826z"
+                                            fill="#000" />
+                                    </g>
+                                    <g>
+                                        <path class="menubar"
+                                            d="M30.23,31.177H0.946c-0.489,0-0.887-0.396-0.887-0.887c0-0.49,0.398-0.888,0.887-0.888H30.23    c0.49,0,0.888,0.398,0.888,0.888C31.118,30.78,30.72,31.177,30.23,31.177z"
+                                            fill="#000" />
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="appointmnt_wrapper d-xl-block d-lg-block">
+                            <ul>
+                                <li>
+                                    <a class="appint-btn " id="appointment-btn">
+                                        <div class="btn-front"><i class="fa fa-calendar"></i>Appointment</div>
+                                        <div class="btn-back"><i class="fa fa-calendar"></i>Appointment</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <nav class="navbar navbar-expand-sm d-xl-block d-lg-block d-md-none d-sm-none d-none">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbar-list-3" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <!-- Links -->
+                            <ul class="nav navbar-nav" id="nav_filter">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'index' %}">home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{%url 'about' %}">about us</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'services' %}">services</a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link " href="#">
+                                        gallery
+                                    </a>
+
+                                </li>
+
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contact' %}">contact us</a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="rp_mobail_menu_main_wrapper d-block d-sm-block d-md-block d-lg-none d-xl-none">
+                            <div id="sidebar">
+                                <img src="{% static 'images/3aqmli.png' %}" alt="logo" class="img-responsive"
+                                    width="100" height="100" />
+                                <div id="toggle_close">&times;</div>
+                                <div id="cssmenu" class="wd_single_index_menu">
+                                    <ul>
+                                        <li>
+                                            <form class="sidebar_search">
+                                                <input type="search" placeholder="Search..." />
+                                                <button>
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                            </form>
+                                        </li>
+                                        <li><a href="index.html">home</a></li>
+                                        <li class="active"><a href="about_us.html">about us</a></li>
+                                        <li><a href="services.html">services</a></li>
+                                        <li class="has-sub">
+                                            <a href="#">pages</a>
+                                            <ul>
+                                                <li><a href="services.html">services</a></li>
+                                                <li><a href="about_us.html">about us</a></li>
+                                                <li><a href="team.html">our team</a></li>
+                                                <li><a href="blog_single.html">blog single</a></li>
+                                                <li><a href="gallery_2.html"> gallery II</a></li>
+                                                <li><a href="gallery_3.html"> gallery III</a></li>
+                                                <li><a href="gallery_4.html"> gallery IV</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a href="blog_single.html">blog</a>
+                                            <ul>
+                                                <li><a href="blog_single.html">blog single</a></li>
+                                                <li><a href="blog_category.html">blog category</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact_us.html">contact us</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+    
+    {% block content %} {% endblock %}
+    <div class="alert alert-success alert-dismissible" role="alert">
+        <p class="alert-text"></p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div id="popup-form" class="form popup-form hidden">
+        <button class="close-btn" id="close-btn">&times;</button>
+        <form method="POST" id="appointment-form" novalidate="novalidate">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    <h1 style="color: #394C69; font-size: 25px; font-weight:800; padding: 15px 0">Request Our Services</h1>
+                    <p>Please Fill The following fields to request our services</p>
+                </div>
+                <div class="col-md-12">
+                    <div class="inquiry_section-pos">
+                        <div class="form-group">
+                            <label class="sr-only">Name</label>
+                            <input type="text" name="full_name" placeholder="Full Name" class="require form-control"
+                                id="name" />
+                        </div>
+                    </div>
+                    <div class="inquiry_section-e">
+                        <div class="form-group">
+                            <label class="sr-only">Email</label>
+                            <input type="email" name="email" id="email" placeholder="Email" class="require form-control"
+                                data-valid="email" data-error="Email should be valid." />
+                        </div>
+                    </div>
+                    <div class="inquiry_section-p">
+                        <div class="form-group">
+                            <label class="sr-only">Phone</label>
+                            <input type="text" name="contact_no" id="phone" placeholder="Phone"
+                                class="require form-control" />
+                        </div>
+                    </div>
+                    <div class="inquiry_section-p">
+                        <div class="form-group">
+                            <label class="sr-only">Address</label>
+                            <input type="text" name="address" id="address" placeholder="Address" class="require form-control" />
+                        </div>
+                    </div>
+                    <div class="inquiry_section-p">
+                        <div class="form-group " >
+                            <label class="sr-only" >Choose your prefered Date</label>
+                            <input type="text" id="date" name="date" placeholder="Prefered Date"
+                                class="require form-control" onfocus="(this.type='date')"/>
+                        </div>
+                    </div>
+                    <div class="inquiry_section-p">
+                        <div class="form-group " >
+                            <label class="sr-only" >Space</label>
+                            <input type="number" id="space" name="space" placeholder="Unit space ( &#13217 )"
+                                class="require form-control" />
+                        </div>
+                    </div>
+                    <div class="inquiry_section-p">
+                        <div class="form-group">
+                            <label class="sr-only">Unit Type</label>
+                            <select name="" id="type" class=" require form-control" >
+                                <option value="" disabled selected>Select your unit type</option>
+                                <option value="house">House</option>
+                                <option value="office">Office</option>
+                                <option value="building">Building</option>
+                                <option value="cafe-resturant">Cafe/Resturant</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- /.col-md-6 -->
+                <div class="col-lg-12 col-md-12 col-12 col-sm-12">
+                    <div class="response"></div>
+                    <div class="cntct_2_btn_wrapper">
+                        <button type="submit" class="btn cntct_btn">Send</button>
+                    </div>
+                </div>
+            </div>
+            <!-- /.row -->
+        </form>
+    </div>
+    
+    <!-- botm newslatter section start-->
+    <div class="btm_newslater_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 col-12 col-sm-12">
+                    <div class="btm_newsletter_text">
+                        <h3>Have Any Question ?</h3>
+                        <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
+                            nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet .</p>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12 col-12 col-sm-12">
+                    <div class="wrapper_email_button pst_toppadder10">
+                        <input type="email" placeholder="your email here" />
+                        <a href="#"><i class="fa fa-paper-plane" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- botm newslatter section end-->
+    <!-- footer section start-->
+    <div class="footer_wrapper pst_toppadder70 pst_bottompadder60">
+        <div class="container">
+            <div class="footer_wrapper_first">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-4">
+                        <div class="wrapper_first_icon foter_contact_nav">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-phone"></i>
+                                    <p>
+                                        +(012) 345 6789 <br />
+                                        +(012) 345 6789
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-4">
+                        <div class="wrapper_first_icon foter_contact_nav">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-envelope"></i>
+                                    <a href="#">
+                                        <p>
+                                            pest@example.com <br />
+                                            spcontrol@example.com
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-4">
+                        <div class="wrapper_first_icon foter_contact_nav">
+                            <ul>
+                                <li>
+                                    <i class="fa fa-map-marker"></i>
+                                    <p>
+                                        123, A Block Kalani Bag <br />
+                                        110, B Block Dewas (M.P.)
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                        <div class="pst_btn_form footer_btn_wrapper">
+                            <ul>
+                                <li>
+                                    <a href="#" class="tem-btn">
+                                        <div class="btn-front">contact us</div>
+                                        <div class="btn-back">contact us</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer_wrapper_second">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                        <div class="wrapper_second_about">
+                            <div class="wrapper_first_image pst_bottompadder40">
+                                <a href="{% url 'index' %}">
+                                    <img src="" class="img-responsive" alt="logo" width="200" height="150" />
+                                </a>
+                            </div>
+                            <div class="abotus_content">
+                                <p>Fusce et sem elementum, mis nibh nec, tincidunt ipsum etiau eu ctor turpis. Quisque
+                                    sitmi elit. Cras vel dui vel orciarel gravida. tincidunt ipsum etiau.</p>
+                            </div>
+                            <div class="aboutus_social_icons">
+                                <ul>
+                                    <li>
+                                        <a href="#"><i class="fa fa-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i> </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                        <div class="wrapper_second_useful">
+                            <h4>Usefull Link</h4>
+                            <ul>
+                                <li>
+                                    <a href="{% url 'about' %}"><i class="fa fa-circle"></i>About </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'services' %}"><i class="fa fa-circle"></i> Services </a>
+                                </li>
+                                <li>
+                                    <a href="gallery_3.html"><i class="fa fa-circle"></i> Our Work </a>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'contact' %}"><i class="fa fa-circle"></i>Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                        <div class="wrapper_second_blog">
+                            <h4>recent news</h4>
+                            <div class="ft_blog_wrapper1">
+                                <div class="ft_blog_image">
+                                    <img src="{% static 'images/foter_blog_1.png' %}" class="img-responsive"
+                                        alt="blog-img1_img" />
+                                </div>
+                                <div class="ft_blog_text">
+                                    <h5><a href="#">Self Sanitizing is the best drill</a></h5>
+                                    <div class="ft_blog_date">Jan 28, 2020</div>
+                                </div>
+                            </div>
+                            <div class="ft_blog_wrapper2">
+                                <div class="ft_blog_image">
+                                    <img src="{% static 'images/foter_blog_2.png' %}" class="img-responsive"
+                                        alt="blog-img2_img" />
+                                </div>
+                                <div class="ft_blog_text">
+                                    <h5><a href="#"> How to Sanitize your home</a></h5>
+                                    <div class="ft_blog_date">Apr 28, 2020</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                        <div class="wrapper_second_useful wrapper_second_useful_2">
+                            <h4>services</h4>
+                            <ul>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle"></i>House Sanitizing</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle"></i> Window Sanitizing</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle"></i>Domestic Sanitizing</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle"></i>Disinfection</a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle"></i>Office Sanitizing</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section3_bottom_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-md-10 col-10 col-sm-10">
+                    <div class="section3_copyright">
+                        <p>Copyright 2020 - 21 <a href="{% url 'index' %}"> Deconta</a>. all right reserved - design by
+                            <a href="index.html">webstrot</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-2 col-sm-2">
+                    <div class="close_wrapper">
+                        <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i>top</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <script src="{% static 'js/jquery_min.js' %}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'venobox/js/venobox.min.js' %}"></script>
+    <script src="{% static 'js/jquery.easypiechart.min.js' %}"></script>
+    <script src="{% static 'js/jquery.inview.min.js' %}"></script>
+    <script src="{% static 'js/jquery.mixitup.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/jquery.themepunch.revolution.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/jquery.themepunch.tools.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.addon.snow.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.actions.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.carousel.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.kenburn.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.layeranimation.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.migration.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.navigation.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.parallax.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.slideanims.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.extension.video.min.js' %}"></script>
+    <script src="{% static 'js/plugin/rs_slider/revolution.addon.slicey.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+    <!-- Request form submition ajax  -->
+    
+   
+    <script>
+        let button = document.getElementById('appointment-btn')
+        let form = document.getElementById('popup-form')
+        let closeBtn = document.getElementById('close-btn')
+        button.addEventListener('click', (e) => {
+            e.preventDefault()
+            form.classList.toggle('hidden')
+            form.classList.add('form-showing')
+        })
+
+        document.addEventListener('keyup', (e) => {
+            if (e.keyCode === 27) {
+                form.classList.replace('form-showing', 'hidden')
+
+            }
+
+        })
+
+        closeBtn.addEventListener('click', () => {
+            form.classList.remove('form-showing')
+
+        })
+    </script>
+
+</body>

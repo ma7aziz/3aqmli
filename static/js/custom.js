@@ -654,7 +654,7 @@
                 $.ajax({
 
                     type: "POST",
-                    url: "{% url 'appointment' %}",
+                    url: "/appointment",
                     data: {
                         name: $('#name').val(),
                         email: $('#email').val(),

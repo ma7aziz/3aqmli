@@ -43,21 +43,20 @@
 
     .form-showing {
         display: block;
-        width: 100%;
-        height: 100%;
         position: fixed;
+        width: 100%;
+        height:100%;
+        overflow-y: hidden;
+        overflow-y: auto;
+       
         top: 0;
-        left: 0;
         background-color: rgba(0, 0, 0, 0.719);
         padding-left: 20px;
         z-index: 990000000000000;
-      
-
-
     }
-
+    
     .form-showing form {
-        width: 60%;
+        width: 70%;
         margin: auto;
         background: #fff;
         padding: 50px;
@@ -589,18 +588,28 @@
             e.preventDefault()
             form.classList.toggle('hidden')
             form.classList.add('form-showing')
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
         })
 
         document.addEventListener('keyup', (e) => {
             if (e.keyCode === 27) {
                 form.classList.replace('form-showing', 'hidden')
+                const scrollY = document.body.style.top;
+                document.body.style.position = '';
+                document.body.style.top = '';
+                window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
             }
 
         })
 
         closeBtn.addEventListener('click', () => {
-            form.classList.remove('form-showing')
+            form.classList.replace('form-showing', 'hidden')
+            const scrollY = document.body.style.top;
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, parseInt(scrollY || '0') * -1);
 
         })
     </script>

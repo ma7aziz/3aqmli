@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import Appointment
+from django.core.mail import EmailMultiAlternatives, mail_admins, send_mail , EmailMessage
 # Create your views here.
 
 
@@ -51,8 +52,15 @@ def contact(request):
 
 def quick_contact(request):
     if request.is_ajax():
-        print(request.POST)
+        phone = request.POST.get('phone')
         response = {
             'msg': 'your phone number has been sent successfully .. We will reach out to you soon .'
         }
+        email_msg = EmailMessage(
+        subject='New Contact Phone Number Recieved',
+        body=f'We recieved new quick contact phone number ,{phone}', 
+        from_email='info@3aqmli.com',  
+        to=['ma7moud.aelaziz@gmail.com'],)
+        
+        email_msg.send()
         return JsonResponse(response)

@@ -111,6 +111,9 @@
 
         }
     }
+    .nav-link:hover{
+        transform: scale(1.1);
+    }
    
 </style>
 
@@ -355,7 +358,7 @@
                 <div class="col-lg-5 col-md-12 col-12 col-sm-12">
                     <div class="wrapper_email_button pst_toppadder10">
                         <form action="" id="quick-contact">
-                            <input type="text" placeholder="your Phone Number Here" name="phone" id="quick-phone" />
+                            <input type="number" placeholder="your Phone Number Here" name="phone" id="quick-phone" />
                             <button type="submit" id="quick-contact-btn" style="border: none; padding:0; "><i
                                     class="fa fa-paper-plane" aria-hidden="true"></i></button>
                         </form>
@@ -430,11 +433,11 @@
         <div class="footer_wrapper_second">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                    <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                         <div class="wrapper_second_about">
                             <div class="wrapper_first_image pst_bottompadder40">
                                 <a href="{% url 'index' %}">
-                                    <img src="" class="img-responsive" alt="logo" width="200" height="150" />
+                                    <img src="{% static 'images/3aqmli-light.png' %}" class="img-responsive" alt="logo" width="200" height="150" />
                                 </a>
                             </div>
                             <div class="abotus_content">
@@ -459,7 +462,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                    <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                         <div class="wrapper_second_useful">
                             <h4>Usefull Link</h4>
                             <ul>
@@ -479,7 +482,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                    <!-- <div class="col-lg-3 col-md-12 col-12 col-sm-12">
                         <div class="wrapper_second_blog">
                             <h4>recent news</h4>
                             <div class="ft_blog_wrapper1">
@@ -503,8 +506,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-12 col-12 col-sm-12">
+                    </div> -->
+                    <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                         <div class="wrapper_second_useful wrapper_second_useful_2">
                             <h4>services</h4>
                             <ul>
@@ -536,12 +539,12 @@
                 <div class="col-lg-10 col-md-10 col-10 col-sm-10">
                     <div class="section3_copyright">
                         <p>Copyright 2020 - 21 all right reserved
-                            <a href="http://braineg.com" target="__blank">Brain Analytica</a></p>
+                            <a href="http://braineg.com" target="__blank" style="color: #fff;">Brain Analytica</a></p>
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-2 col-2 col-sm-2">
-                    <div class="close_wrapper">
-                        <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up"></i>top</a>
+                    <div class="close_wrapper" >
+                        <a href="javascript:" id="return-to-top" style="color: #fff;" ><i class="fa fa-arrow-up" style="color: #fff;" ></i>top</a>
                     </div>
                 </div>
             </div>

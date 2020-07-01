@@ -15,7 +15,7 @@
                 data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description=""
                 data-slicey_shadow="0px 0px 0px 0px transparent">
                 <!-- MAIN IMAGE -->
-                <img src="{% static 'images/slider_bg.jpg' %}" alt="" data-bgposition="center center" data-kenburns="on"
+                <img src="{% static 'images/slider-img.jpeg' %}" alt="" data-bgposition="center center" data-kenburns="on"
                     data-duration="5000" data-ease="Power2.easeInOut" data-scalestart="100" data-scaleend="150"
                     data-rotatestart="0" data-rotateend="0" data-blurstart="20" data-blurend="0" data-offsetstart="0 0"
                     data-offsetend="0 0" class="rev-slidebg" data-no-retina />
@@ -216,12 +216,12 @@
                     data-textAlign="['left','left','center','center']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                     style="z-index: 20; min-width: 480px; max-width: 480px; white-space: normal; font-size: 28px; line-height: 28px; font-weight: 500; color: #ffffff; letter-spacing: 0px;">
-                    SANITIZE & CLEAN YOUR HOME
+                    100% eco-friendly treatments
                 </div>
 
                 <!-- LAYER NR. 17 -->
                 <a class="tp-caption rev-btn tp-resizeme slider_btn_2"
-                    href="https://revolution.themepunch.com/direct-customer-benefits/" target="_blank"
+                    href="{% url 'services' %}" target="_blank"
                     id="slide-67-layer-7" data-x="['left','left','center','center']" data-hoffset="['60','120','0','0']"
                     data-y="['middle','middle','middle','middle']" data-voffset="['100','40','10','-10']"
                     data-width="220" data-height="none" data-whitespace="nowrap" data-type="button" data-actions=""
@@ -464,12 +464,12 @@
                     data-textAlign="['center','center','center','center']" data-paddingtop="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]"
                     style="z-index: 20; min-width: 580px; max-width: 580px; white-space: normal; font-size: 28px; line-height: 28px; font-weight: 500; color: #ffffff; letter-spacing: 0px;">
-                    STAY NEAT & CLEAN
+                    100% ECO FRIENDLY PROCESS 
                 </div>
 
                 <!-- LAYER NR. 34 -->
                 <a class="tp-caption rev-btn tp-resizeme slider_btn_2"
-                    href="https://revolution.themepunch.com/direct-customer-benefits/" target="_blank"
+                    href="{% url 'services' %}" target="_blank"
                     id="slide-66-layer-7" data-x="['center','center','center','center']"
                     data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
                     data-voffset="['80','40','10','-10']" data-width="220" data-height="none" data-whitespace="nowrap"
@@ -504,6 +504,7 @@
                     READ MORE
                 </a>
             </li>
+
             <!-- SLIDE  -->
             <li data-index="rs-68" data-transition="fade" data-slotamount="default" data-hideafterloop="0"
                 data-hideslideonmobile="off" data-easein="default" data-easeout="default" data-masterspeed="600"
@@ -717,7 +718,7 @@
 
                 <!-- LAYER NR. 51 -->
                 <a class="tp-caption rev-btn tp-resizeme slider_btn_2"
-                    href="http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=themepunch&amp;license=regular&amp;open_purchase_for_item_id=2751380&amp;purchasable=source"
+                    href="{% url 'services' %}"
                     target="_blank" id="slide-68-layer-7" data-x="['left','left','center','center']"
                     data-hoffset="['60','120','0','0']" data-y="['middle','middle','middle','middle']"
                     data-voffset="['80','40','10','-10']" data-width="220" data-height="none" data-whitespace="nowrap"
@@ -762,7 +763,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-12 col-sm-12 offset-lg-2 offset-md-2">
                 <div class="sp_choose_heading_main_wrapper pst_bottompadder50">
-                    <h2><span>Work Principle</span></h2>
+                    <h2><span>Our Cleaning Process</span></h2>
                     <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,sem nibh id elit. Duis
                         sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit</p>
                 </div>
@@ -772,7 +773,7 @@
                     <div class="work_services_img">
                         <img src="{% static 'images/principle1.png' %}" class="img-responsive" alt="img" />
                     </div>
-                    <h4 class="text-center pst_bottompadder10"><a href="#">Preparatory Arrangement</a></h4>
+                    <h4 class="text-center pst_bottompadder10"><a href="#">Book Your Assessment</a></h4>
                     <p class="text-center">We come to you to inspect the area, to prepare it for future disinfection,
                         and to take into concern your wishes.</p>
                 </div>
@@ -783,7 +784,7 @@
                         <img src="{% static 'images/principle2.png' %}" class="img-responsive" alt="img" />
                     </div>
                     <h4 class="text-center pst_bottompadder10">
-                        <a href="#">disinfection</a>
+                        <a href="#">sanitization & disinfection</a>
                     </h4>
                     <p class="text-center">We carry out the disinfection during couple of hours depending on house size
                         and amount of work.</p>
@@ -794,7 +795,7 @@
                     <div class="work_services_img">
                         <img src="{% static 'images/principle3.png' %}" class="img-responsive" alt="img" />
                     </div>
-                    <h4 class="text-center pst_bottompadder10"><a href="#">Removal After Disinfection</a></h4>
+                    <h4 class="text-center pst_bottompadder10"><a href="#">Your Home is Corona Free</a></h4>
                     <p class="text-center">We do all the removal after disinfection was successfully done. You’ll have
                         no worries about that!</p>
                 </div>
@@ -809,26 +810,25 @@
         <div class="row">
             <div class="col-lg-8 col-md-8 col-12 col-sm-12 offset-lg-2 offset-md-2">
                 <div class="sp_choose_heading_main_wrapper pst_bottompadder50">
-                    <h2><span>Why Choose Us</span></h2>
-                    <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit</p>
+                    <h2><span>What makes us different?</span></h2>
+                    <p>3aqmli offers complete sanitization and disinfection of your home, office, and common areas to remove all harmful bacterial and viral germs.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-12 col-sm-12">
                 <div class="sp_who_we_are_wrapper">
                     <div class="ps_img_wrapper">
                         <div class="img-effect zoom-slow">
-                            <img src="{% static 'images/who_we_img.jpg' %}" class="img-responsive" alt="img" />
+                            <img src="{% static 'images/who_we_img.jpeg' %}" class="img-responsive" alt="img" />
                         </div>
                         <div class="who_we_Are_txt_wrapper">
                             <h2 class="pst_bottompadder10 pst_toppadder20">who we are</h2>
-                            <p>Proin gravida nibh vel velit auctor aliquet. ean sollicitudin, lorem quis bibendu ipsum, nec sagittis sem nibh sit.</p>
-                            <p>Proin gravida nibh vel velit auctor aliquet. ean solly, Duis sed sollicitudin odio sitnibh</p>
+                            <p>Our team of experts uses 100% natural eco-friendly cleansers and the latest cleaning equipment to give you nothing less than 99.9% hygienic and bacteria-free furnishings so you can have a fresh and healthy indoor environment.</p>
                         </div>
                     </div>
                     <div class="social_icon3">
                         <ul>
                             <li>
-                                <a href="#" class="downlod"> <i class="fa fa-file"></i> Download brochure </a>
+                                <a href="{% url 'services' %}" class="downlod"> <i class="fa fa-file"></i>Read More !</a>
                             </li>
                         </ul>
                     </div>
@@ -972,9 +972,9 @@
                     <div class="pst_btn_form pst_toppadder20">
                         <ul>
                             <li>
-                                <a href="#" class="tem-btn">
-                                    <div class="btn-front">read more</div>
-                                    <div class="btn-back">read more</div>
+                                <a href="{% url 'contact' %}" class="tem-btn">
+                                    <div class="btn-front">Send message</div>
+                                    <div class="btn-back">Send message</div>
                                 </a>
                             </li>
                         </ul>
@@ -1100,7 +1100,7 @@
                                     />
                                 </svg>
                             </div>
-                            <h4 class="text-center pst_bottompadder10"><a href="#"> Window Sanitizing</a></h4>
+                            <h4 class="text-center pst_bottompadder10"><a href="#"> Restaurants Sanitizing</a></h4>
                             <p class="text-center">Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum auctor, nisi elit consequat</p>
                             <h3><a href="#">Read More </a></h3>
                         </div>
@@ -1215,7 +1215,7 @@
                         <div class="pst_btn_form team_btn pst_toppadder20">
                             <ul>
                                 <li>
-                                    <a href="services.html" class="tem-btn">
+                                    <a href="{% url 'services'%}" class="tem-btn">
                                         <div class="btn-front">View All</div>
                                         <div class="btn-back">View All</div>
                                     </a>
@@ -1247,7 +1247,7 @@
                                     <a href="#"><i class="flaticon-happy"></i></a>
                                 </div>
                                 <div class="count-description">
-                                    <span class="timer">2055</span>+
+                                    <span class="timer">150</span>+
                                     <h5 class="con2">happy clients</h5>
                                 </div>
                             </div>
@@ -1256,7 +1256,7 @@
                                     <a href="#"><i class="flaticon-medal"></i></a>
                                 </div>
                                 <div class="count-description">
-                                    <span class="timer">845</span>+
+                                    <span class="timer">150</span>+
                                     <h5 class="con2">success mission</h5>
                                 </div>
                             </div>
@@ -1265,7 +1265,7 @@
                                     <a href="#"><i class="flaticon-trolley"></i></a>
                                 </div>
                                 <div class="count-description">
-                                    <span class="timer">257</span>+
+                                    <span class="timer">100</span>+
                                     <h5 class="con4">Passionate Employee</h5>
                                 </div>
                             </div>
@@ -1388,8 +1388,8 @@
                     <div class="row">
                         <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
                             <div class="sp_choose_heading_main_wrapper sp_dark_heading testi_heading_wrapper pst_toppadder50">
-                                <h2><span>testimonial</span></h2>
-                                <p>Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum,sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit.</p>
+                                <h2>Clients Reviews</h2>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, deserunt Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias quia cum repellat, quo sunt, eveniet ad animi </p>
                             </div>
                         </div>
                         <div class="col-lg-7 col-md-12 col-xs-12 col-sm-12">
@@ -1398,7 +1398,7 @@
                                     <div class="item box_testimonial">
                                         <div class="section2_img_wrapper">
                                             <div class="author-thumb">
-                                                <a href="#"><img src="images/author-2.jpg" class="img-responsive" alt="Image" /> </a>
+                                                <a href="#"><img src="{% static 'images/profile.png' %}" class="img-responsive" alt="Image" /> </a>
                                             </div>
                                             <!-- /.author-thumb -->
     
@@ -1406,14 +1406,17 @@
                                         </div>
     
                                         <div class="section2_text_wrapper">
-                                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum a part of the sagittis sem mail in the box nibh id elit.</p>
-                                            <h4>Ajay s. <span> Company Founder</span></h4>
+                                            <p>We are very happy with the service provided by 3aqmli. The service was done in a very professional way. 
+                                                the team were fast, efficient, and took photos before and after cleaning.
+                                                 As a result, there is no more stale air in our apartment. 
+                                                 I highly recommend 3aqmli! Thank you for a great job!</p>
+                                            <h4 style="color: #fff;">Ahmed Omar </h4>
                                         </div>
                                     </div>
                                     <div class="item box_testimonial">
                                         <div class="section2_img_wrapper">
                                             <div class="author-thumb">
-                                                <a href="#"><img src="images/author-2.jpg" class="img-responsive" alt="Image" /> </a>
+                                                <a href="#"><img src="{% static 'images/profile.png' %}" class="img-responsive" alt="Image" /> </a>
                                             </div>
                                             <!-- /.author-thumb -->
     
@@ -1421,14 +1424,14 @@
                                         </div>
     
                                         <div class="section2_text_wrapper">
-                                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum a part of the sagittis sem mail in the box nibh id elit.</p>
-                                            <h4>Steven Jony <span> Medical Manager</span></h4>
+                                            <p>Highly recommended! I got 3 quotations for cleaning and disinfection, not only was 3aqmli the most cost-effective, they were also the most prompt and professional in communication.</p>
+                                            <h4><span> Omar Salem</span></h4>
                                         </div>
                                     </div>
                                     <div class="item box_testimonial">
                                         <div class="section2_img_wrapper">
                                             <div class="author-thumb">
-                                                <a href="#"><img src="images/author-2.jpg" class="img-responsive" alt="Image" /> </a>
+                                                <a href="#"><img src="{% static 'images/profile.png' %}" class="img-responsive" alt="Image" /> </a>
                                             </div>
                                             <!-- /.author-thumb -->
     
@@ -1436,8 +1439,8 @@
                                         </div>
     
                                         <div class="section2_text_wrapper">
-                                            <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin lorem quis bibendum a part of the sagittis sem mail in the box nibh id elit.</p>
-                                            <h4>Lezkit Smith <span> Company Worker </span></h4>
+                                            <p>Right from quotation to execution they were very clear on their to-dos and they made sure that I was aware of what was being done. Saw the before & after by myself and I am absolutely satisfied with the service provided.</p>
+                                            <h4><span> Shady Abdallah</span></h4>
                                         </div>
                                     </div>
                                 </div>

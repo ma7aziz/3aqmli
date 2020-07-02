@@ -8,13 +8,14 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 
+to_email = 'ma7moud.aelaziz@gmail.com'
+
 def index(request):
     return render(request, 'index.html')
 
-
+from django.template.loader import render_to_string
 def appointment(request):
     if request.is_ajax():
-        print(request.POST)
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         email = request.POST.get('email')
@@ -24,8 +25,16 @@ def appointment(request):
         unit_space = request.POST.get('space')
         appointment = Appointment(name=name, phone=phone, email=email , address = address , 
                                     date = date, unit_space=unit_space, unit_type=unit_type )
-        appointment.save()  
-
+        appointment.save() 
+        msg_html = render_to_string('emails/booking_confirm.html')
+        email_msg = EmailMultiAlternatives('3AQMLI.COM - Appointment Request Recieved' , 'Service Request Recieved successfully !' , 'info@3aqmli.com' ,(email ,)  )
+        email_msg.attach_alternative(msg_html, "text/html") 
+        email_msg.send()
+        notify_html = render_to_string('emails/booking_notify.html')
+        notification = EmailMultiAlternatives('3AQMLI.COM - New Appointment Request Recieved' , 'New Appointment Request Recieved ' , 'info@3aqmli.com', (to_email,))
+        notification.attach_alternative(notify_html, "text/html")
+        notification.send()
+        
         response = {
             
             'msg': 'your Request Has been Sent .. We will Contact you as soon as possible.'

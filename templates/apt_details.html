@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +13,24 @@
     .container {
         margin-top: 25px;
     }
-    .col-4 , .col-8 {
+
+    .col-4,
+    .col-8 {
         padding: 10px;
         border-bottom: 1px solid #eee;
     }
+
     .navbar-nav {
         display: flex;
         flex-direction: row;
 
     }
+
     .nav-item {
         padding: 20px;
     }
 </style>
+
 <body>
     <nav class="nav navbar navbar-dark">
         <ul class="navbar-nav">
@@ -47,13 +53,15 @@
             <div class="col-8">{{ appointment.unit_type}}</div>
             <div class="col-4 bg-light font-weight-bold b-5">Unit space</div>
             <div class="col-8">{{ appointment.unit_space}} m</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Notes</div>
+            <div class="col-8">{{ appointment.notes}} </div>
             <div class="col-4 bg-light font-weight-bold b-5">Prefered Date</div>
             <div class="col-8">{{ appointment.date}}</div>
             <div class="col-4 bg-light font-weight-bold b-5">Time Of request</div>
             <div class="col-8">{{ appointment.timestamp}}</div>
 
-
         </div>
     </div>
 </body>
+
 </html>

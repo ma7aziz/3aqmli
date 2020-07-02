@@ -1099,7 +1099,7 @@ ul ul > li.has-sub > a:before {
 }
 #rev_slider_24_1_forcefullwidth,
 #rev_slider_24_1_wrapper {
-    height: 800px !important;
+    height: 900px !important;
 }
 #slide-66-layer-3 {
     width: 100%;
@@ -2186,6 +2186,7 @@ ul ul > li.has-sub > a:before {
     position: relative;
     z-index: 2;
     text-align: center;
+    vertical-align: middle;
     height: 66px;
     line-height: 66px;
     width: 180px;

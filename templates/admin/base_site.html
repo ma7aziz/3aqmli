@@ -1,0 +1,10 @@
+{% extends 'admin/base.html' %}
+{%load static %}
+
+
+{% block nav-global %}
+    <a href="{%url 'appointments' %}" class="orders-tab" style="background-color: crimson; padding: 10px">Requests</a>
+{% endblock %}
+{% block extrastyle %}
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+{% endblock %}

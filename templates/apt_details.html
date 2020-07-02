@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}" />
+    <title>3AQMLI -APPOINTMENT REQUEST </title>
+</head>
+<style>
+    .container {
+        margin-top: 25px;
+    }
+    .col-4 , .col-8 {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+    .navbar-nav {
+        display: flex;
+        flex-direction: row;
+
+    }
+    .nav-item {
+        padding: 20px;
+    }
+</style>
+<body>
+    <nav class="nav navbar navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="/admin">Admin Pannel</a> </li>
+            <li class="nav-item"><a href="/appointments">All Requests</a> </li>
+        </ul>
+    </nav>
+    <div class="container ">
+        <h2 class="text-center mb-5">Appointment Request Details</h2>
+        <div class="row">
+            <div class="col-4 bg-light font-weight-bold b-5">Client name</div>
+            <div class="col-8">{{ appointment.name}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Client Address</div>
+            <div class="col-8">{{ appointment.address}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Client Phone Number</div>
+            <div class="col-8">{{ appointment.phone}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Client Email</div>
+            <div class="col-8">{{ appointment.email}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Unit type</div>
+            <div class="col-8">{{ appointment.unit_type}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Unit space</div>
+            <div class="col-8">{{ appointment.unit_space}} m</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Prefered Date</div>
+            <div class="col-8">{{ appointment.date}}</div>
+            <div class="col-4 bg-light font-weight-bold b-5">Time Of request</div>
+            <div class="col-8">{{ appointment.timestamp}}</div>
+
+
+        </div>
+    </div>
+</body>
+</html>

@@ -664,6 +664,7 @@
                         date: $('#date').val(),
                         type: $('#type').val(),
                         space: $('#space').val(),
+                        notes: $('#notes').val(),
                         dataType: "json"
 
                     },

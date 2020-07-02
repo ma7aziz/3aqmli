@@ -9,8 +9,19 @@ class Appointment(models.Model):
     date = models.DateField()
     unit_type = models.CharField(max_length=50)
     unit_space = models.CharField(max_length=5)
+    notes = models.TextField(max_length= 500 , blank = True)
     timestamp = models.DateTimeField(auto_now_add=True)
+    recieved = models.BooleanField(default=False)
+    
 
     def __str__(self):
         return self.name
+
+
+class QuickRequest(models.Model):
+    phone = models.CharField(max_length=20)
+    timestamp = models.DateTimeField(auto_now_add=True)    
+
+    def __str__(self):
+        return str(self.phone)
     

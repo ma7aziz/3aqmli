@@ -37,29 +37,26 @@
             <li class="nav-item"><a href="/admin">Admin Pannel</a> </li>
             <li class="nav-item"><a href="/appointments">All Requests</a> </li>
             <li class="nav-item"><a href="/messages">Recieved Messages </a> </li>
+            <!-- <li class="nav-item"><a href="/appointments">All Requests</a> </li> -->
         </ul>
     </nav>
     <div class="container ">
-        <h2 class="text-center mb-5">Appointment Request Details</h2>
+        <h2 class="text-center mb-5">Messgae Details</h2>
         <div class="row">
             <div class="col-4 bg-light font-weight-bold b-5">Client name</div>
-            <div class="col-8">{{ appointment.name}}</div>
-            <div class="col-4 bg-light font-weight-bold b-5">Client Address</div>
-            <div class="col-8">{{ appointment.address}}</div>
+            <div class="col-8">{{ msg.name}}</div>
+            
             <div class="col-4 bg-light font-weight-bold b-5">Client Phone Number</div>
-            <div class="col-8">{{ appointment.phone}}</div>
+            <div class="col-8">{{ msg.phone}}</div>
             <div class="col-4 bg-light font-weight-bold b-5">Client Email</div>
-            <div class="col-8">{{ appointment.email}}</div>
-            <div class="col-4 bg-light font-weight-bold b-5">Unit type</div>
-            <div class="col-8">{{ appointment.unit_type}}</div>
-            <div class="col-4 bg-light font-weight-bold b-5">Unit space</div>
-            <div class="col-8">{{ appointment.unit_space}} m</div>
-            <div class="col-4 bg-light font-weight-bold b-5">Notes</div>
-            <div class="col-8">{{ appointment.notes}} </div>
-            <div class="col-4 bg-light font-weight-bold b-5">Prefered Date</div>
-            <div class="col-8">{{ appointment.date}}</div>
-            <div class="col-4 bg-light font-weight-bold b-5">Time Of request</div>
-            <div class="col-8">{{ appointment.timestamp}}</div>
+            <div class="col-8">{{ msg.email}}</div>
+           
+   
+            <div class="col-4 bg-light font-weight-bold b-5">Message</div>
+            <div class="col-8">{{ msg.message }} </div>
+         
+            <div class="col-4 bg-light font-weight-bold b-5">Time recieved</div>
+            <div class="col-8">{{ msg.timestamp}}</div>
 
         </div>
     </div>

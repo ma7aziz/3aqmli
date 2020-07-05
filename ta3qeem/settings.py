@@ -127,4 +127,9 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
-
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'info@3aqmli.com'
+EMAIL_HOST_PASSWORD = 'braineg.com'

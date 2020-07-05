@@ -30,12 +30,11 @@
                 <li class="nav-item"><a href="/admin">Admin Pannel</a> </li>
                 <li class="nav-item"><a href="{% url 'index' %}">Home Page</a> </li>
                 <li class="nav-item"><a href="{% url 'numbers' %}">Quick Request</a> </li>
-                <li class="nav-item"><a href="/messages">Recieved Messages </a> </li>
             </ul>
         </nav>
     <div class="text-center m-3">
         <h2>
-            Appointment Requests
+          Contact Messages
         </h2>
     </div>
     <div class="container">
@@ -44,27 +43,25 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Address</th>
+                <!-- <th scope="col">Address</th> -->
                 <th scope="col">Phone</th>
-                <th scope="col">Unit type</th>
-                <th scope="col">Time</th>
-                <th scope="col">status</th>
+                <!-- <th scope="col">Unit type</th> -->
+                <th scope="col">Email</th>
+                <!-- <th scope="col">status</th> -->
+                <th scope="col" > Time Recieved </th>
               </tr>
             </thead>
             <tbody>
-                {% for appoint in page_obj%}
+                {% for msg in page_obj%}
               <tr>
-                <th scope="row"><a href="/appoint/{{appoint.id}}">{{appoint.id}}</a></th>
-                <td> <a href="/appoint/{{appoint.id}}">{{appoint.name}}</a></td>
-                <td>{{appoint.address|truncatechars:25}}</td>
-                <td>{{appoint.phone}}</td>
-                <td>{{appoint.unit_type}}</td>
-                <td>{{appoint.timestamp}}</td>
-                {% if appoint.recieved %}
-                <td class="text-success">Recieved</td>
-                {% else %}
-                <td class="text-danger">Not Recieved</td>
-                {% endif %}
+                <th scope="row"><a href="/msg/{{msg.id}}">{{msg.id}}</a></th>
+                <td> <a href="/msg/{{msg.id}}">{{msg.name}}</a></td>
+                <!-- <td>{{msg.address|truncatechars:25}}</td> -->
+                <td>{{msg.phone}}</td>
+                <!-- <td>{{msg.unit_type}}</td> -->
+                <td>{{msg.email}}</td>
+                <td>{{msg.timestamp}}</td>
+                
               </tr>
               {% endfor %}
              

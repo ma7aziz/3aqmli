@@ -25,3 +25,14 @@ class QuickRequest(models.Model):
     def __str__(self):
         return str(self.phone)
     
+
+class ContactMessage(models.Model):
+    name  = models.CharField(max_length= 200 , blank= True , null = True)
+    email  = models.CharField(max_length= 200 , blank= True , null = True)
+    phone  = models.CharField(max_length= 200 , blank= True , null = True)
+    message   = models.TextField(max_length=1000 , blank = True , null=True)
+    timestamp = models.DateTimeField(auto_now_add= True)
+
+    def __str__(self):
+        return self.name
+        

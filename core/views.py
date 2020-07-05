@@ -2,7 +2,7 @@ from django.template.loader import render_to_string
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from .models import Appointment, QuickRequest
+from .models import Appointment, QuickRequest ,ContactMessage
 from django.core.mail import EmailMultiAlternatives, mail_admins, send_mail, EmailMessage
 from django.contrib.auth.decorators import user_passes_test
 from django.core.paginator import Paginator
@@ -59,6 +59,20 @@ def services(request):
 def contact(request):
     if request.is_ajax():
         print(request.POST)
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone= request.POST.get('phone')
+        message = request.POST.get('message')
+
+        contactmsg = ContactMessage(name = name , email= email , phone =phone , message =message)
+        contactmsg.save()
+
+        msg_html = render_to_string('emails/new_contact.html', {'name':name , 'email':email , 'phone':phone, 'message':message})
+        subject  = 'New Message'
+        text_content = f'New contact message recieved on 3aqmli.com . \n sender name : {name} , \n  email : {email} \n phone : {phone} , \n message Content : {message} ' 
+        html_content = msg_html
+        email_msg = EmailMultiAlternatives(subject, text_content , 'info@3aqmli.com', [to_email, ], )
+        email_msg.send()
         response = {
             'msg': 'your message has been sent successfully .. We will reach out to you soon .'
         }
@@ -115,3 +129,21 @@ def quick_request(request):
 
                    }
                   )
+
+@user_passes_test(lambda u: u.is_superuser)
+def contactmsg(request):
+    contactmsgs = ContactMessage.objects.all().order_by('-timestamp')
+    paginator = Paginator(contactmsgs, 30)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'contact_messages.html',
+                  {'page_obj': page_obj,
+
+                   })
+@user_passes_test(lambda u: u.is_superuser)
+def msg_details(request, id):
+    msg = ContactMessage.objects.get(pk=id)
+    return render(request, 'msg_details.html', {'msg': msg})
+
+    
+
